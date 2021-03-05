@@ -50,32 +50,33 @@ for i in range(len(colors)):
     b=Button(bg=colors[i],width=1,height=1)
     b.bind('<Button-1>',palitra)
     colors_btns.append(b)
-    b.grid(row=0,column=i+1)        
+    b.grid(row=1,column=i)        
 
+print(len(colors))
 #иконки
 im=PhotoImage(file='images/filled.gif')
 im1=PhotoImage(file='images/rubber.gif')
 
 c=Canvas(a,width=700,height=500,bg='white')
-c.grid(row=1,column=0)
+c.grid(row=0,columnspan=27)
 
 rd_button=Button(text='random color',command=random_color)
-rd_button.grid(row=0,column=18)
+rd_button.grid(row=1,column=18)
 
 rubber_btn=Button(image=im1,command=rubber)
-rubber_btn.grid(row=0,column=19)
+rubber_btn.grid(row=1,column=19)
 
 submit_btn=Button(text='Submit',command=width_config)
-submit_btn.grid(row=2,column=14)
+submit_btn.grid(row=1,column=15)
 
-entry=Entry(bd=3,width=5)
-entry.grid(row=2,column=15)
+entry=Entry(bd=3,width=9)
+entry.grid(row=1,column=16)
 
 filled_button=Button(image=im,command=filled)
-filled_button.grid(row=0,column=13)
+filled_button.grid(row=1,column=12)
 
 clear_btn=Button(text='Очистить',command=clear)
-clear_btn.grid(row=2,column=20)
+clear_btn.grid(row=1,column=22)
 
 a.bind('<B1-Motion>',draw)
 a.mainloop()
